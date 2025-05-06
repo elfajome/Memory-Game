@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memory Game</title>
+        <!-- file css -->
+        <link rel="stylesheet" href="style.css">
+        <!--  Google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+<body>
+
+    <div class="control-buttons">
+        <span>Start Game</span>
+    </div>
+
+    <div class="memory-container">
+        <div class="info-container">
+            <div class="name">
+                Hello: <span></span>
+            </div>
+            <div class="tries">
+                <p class="wrong">Wrong Tries: <span>0</span></p>
+                <p>|</p>
+                <p class="timer">Timer: <span>60</span></p>
+                <p>|</p>
+                <p class="score">score: <span>0</span></p>
+            </div>
+        </div>
+        <div class="memory-game-blocks"></div>
+    </div>
+
+    <div class="container-rest">
+        <input type="submit" class="restart-game" value="Restart Game">
+    </div>
+
+    <audio id="backgroundSound" src="audio/background.mp4" preload="auto"></audio>
+    <audio id="fail" src="audio/fail.mp4" preload="auto"></audio>
+    <audio id="success" src="audio/succes.mp4" preload="auto"></audio>
+    <audio id="win" src="audio/win.mp4" preload="auto"></audio>
+    <audio id="failed" src="audio/failed.mp4" preload="auto"></audio>
+
+    <script src="app.js"></script>
+</body>
+</html>

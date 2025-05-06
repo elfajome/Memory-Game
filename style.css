@@ -1,0 +1,175 @@
+/* Reset default styles for consistent box sizing and spacing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Set base font family for the body */
+body {
+    font-family: Arial, Tahoma, sans-serif;
+}
+
+/* Style for the control buttons overlay */
+.control-buttons {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Ensure it stays on top of other elements */
+    background-color: rgba(82, 87, 89, 0.7); /* Semi-transparent background */
+}
+
+/* Style for the start game button */
+.control-buttons span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the button */
+    background-color: #F44336; /* Red background */
+    color: #FFF; /* White text */
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer; /* Indicate clickable element */
+}
+
+/* Container for the memory game layout */
+.memory-container {
+    max-width: 600px;
+    width: 90%;
+    margin: 1.5rem auto;
+    background-color: #ddd;
+    padding: 20px;
+}
+
+/* Style for the info container (name, tries, timer, score) */
+.memory-container .info-container {
+    background-color: #F6F6F6; /* Light background */
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid #2196f3; /* Blue border */
+    display: flex;
+    justify-content: space-between; /* Space out child elements */
+    align-items: center;
+    margin-bottom: 2rem; /* Space below the info section */
+}
+
+/* Style for the name section */
+.memory-container .info-container .name {
+    flex: 1; /* Take available space */
+}
+
+/* Style for the tries section */
+.memory-container .info-container .tries {
+    display: flex;
+    justify-content: space-between; /* Space out tries text and count */
+    flex: 1.5; /* Take slightly more space than name */
+}
+
+/* Style for the name and tries spans */
+.memory-container .info-container .name span,
+.memory-container .info-container .tries span {
+    color: #2196f3; /* Blue color for dynamic text */
+}
+
+/* Grid layout for the game blocks */
+.memory-game-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Responsive grid */
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    overflow: hidden; /* Prevent overflow issues */
+    position: relative;
+}
+
+/* Disable clicking when class is added */
+.memory-game-blocks.no-clicking {
+    pointer-events: none;
+}
+
+/* Style for individual game blocks */
+.memory-game-blocks .game-block {
+    width: 95px;
+    height: 95px;
+    margin: 10px;
+    transition: transform .5s; /* Smooth flip animation */
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    position: relative;
+    cursor: pointer; /* Indicate clickable element */
+}
+
+/* Style for the front face of the block */
+.memory-game-blocks .game-block .front {
+    background-color: #333; /* Dark gray background */
+}
+
+/* Add a question mark to the front face */
+.memory-game-blocks .game-block .front:before {
+    content: '?';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the question mark */
+    color: #FFF; /* White text */
+    font-size: 60px;
+    font-weight: bold;
+}
+
+/* Style for the back face of the block */
+.memory-game-blocks .game-block .back {
+    background-color: #607D8B; /* Blue-gray background */
+    transform: rotateY(180deg); /* Initially rotated for flip effect */
+}
+
+/* Style for the image on the back face */
+.memory-game-blocks .game-block .back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the area without distortion */
+}
+
+/* Common styles for both faces */
+.memory-game-blocks .game-block .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Hide the back face during flip */
+    border: 2px solid #2196F3; /* Blue border */
+}
+
+/* Styles for flipped or matched blocks */
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Flip the block */
+    pointer-events: none; /* Disable further clicks on matched blocks */
+}
+
+/* Style for the restart game container */
+.container-rest {
+    text-align: center;
+    margin-top: 3rem; /* Space above the button */
+}
+
+/* Style for the restart game button */
+.container-rest .restart-game {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    background-color: #333; /* Dark gray background */
+    border: none;
+    border-radius: 7px;
+    cursor: pointer; /* Indicate clickable element */
+    transition: 0.4s; /* Smooth hover effect */
+}
+
+/* Hover effect for the restart button */
+.container-rest .restart-game:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
