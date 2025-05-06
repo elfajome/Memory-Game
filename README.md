@@ -76,4 +76,4 @@ _Add screenshots later to showcase gameplay, score UI, and timer in action._
 
 ```bash
 # Clone the repository
-git clone https://github.com/elfajumi/memory-game.git
+https://github.com/elfajome/Memory-Game.git
